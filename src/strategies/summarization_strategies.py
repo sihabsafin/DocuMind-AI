@@ -383,8 +383,11 @@ class MultiLevelSummarizer:
         
         summaries = {}
         
+        # Get model names from settings
+        from config.settings import settings
+        
         # TL;DR - use fast model
-        fast_strategy = self.selector.get_strategy_instance("stuff", llm_manager.get_fast_model().model_name)
+        fast_strategy = self.selector.get_strategy_instance("stuff", settings.fast_model)
         summaries['tldr'] = fast_strategy.summarize(chunks, "tldr", style)
         
         # Bullet Summary - use default model
@@ -397,7 +400,7 @@ class MultiLevelSummarizer:
         # Detailed Summary - use premium model for best quality
         premium_strategy = self.selector.get_strategy_instance(
             strategy_name,
-            llm_manager.get_premium_model().model_name
+            settings.premium_model
         )
         summaries['detailed'] = premium_strategy.summarize(chunks, "detailed", style)
         
