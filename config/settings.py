@@ -17,8 +17,8 @@ class Settings(BaseSettings):
     serpapi_api_key: Optional[str] = Field(default=None, env="SERPAPI_API_KEY")
     
     # Model Configuration
-    default_model: str = Field(default="gemma2-9b-it", env="DEFAULT_MODEL")
-    premium_model: str = Field(default="llama-3.1-70b-versatile", env="PREMIUM_MODEL")
+    default_model: str = Field(default="llama-3.3-70b-versatile", env="DEFAULT_MODEL")
+    premium_model: str = Field(default="llama-3.3-70b-versatile", env="PREMIUM_MODEL")
     fast_model: str = Field(default="llama-3.1-8b-instant", env="FAST_MODEL")
     
     # Ollama Configuration
@@ -94,16 +94,16 @@ settings = Settings()
 
 # Model configurations
 MODEL_CONFIGS = {
-    "gemma2-9b-it": {
+    "llama-3.3-70b-versatile": {
         "provider": "groq",
-        "context_window": 8192,
+        "context_window": 32768,
         "speed": "fast",
-        "quality": "good",
+        "quality": "excellent",
         "cost": "free"
     },
     "llama-3.1-70b-versatile": {
         "provider": "groq",
-        "context_window": 8192,
+        "context_window": 32768,
         "speed": "medium",
         "quality": "excellent",
         "cost": "free"
@@ -114,6 +114,21 @@ MODEL_CONFIGS = {
         "speed": "very_fast",
         "quality": "good",
         "cost": "free"
+    },
+    "mixtral-8x7b-32768": {
+        "provider": "groq",
+        "context_window": 32768,
+        "speed": "medium",
+        "quality": "excellent",
+        "cost": "free"
+    },
+    "gemma2-9b-it": {
+        "provider": "groq",
+        "context_window": 8192,
+        "speed": "fast",
+        "quality": "good",
+        "cost": "deprecated",
+        "note": "Deprecated - use llama-3.3-70b-versatile instead"
     },
     "mixtral:8x7b": {
         "provider": "ollama",
