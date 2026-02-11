@@ -356,12 +356,6 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 ---
 
-## 📞 Support
-
-- 📧 Email: support@documind.ai (placeholder)
-- 💬 Discord: [Join our community](https://discord.gg/documind) (placeholder)
-- 📖 Docs: [docs.documind.ai](https://docs.documind.ai) (placeholder)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/documind-ai/issues)
 
 ---
 
