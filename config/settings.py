@@ -101,13 +101,6 @@ MODEL_CONFIGS = {
         "quality": "excellent",
         "cost": "free"
     },
-    "llama-3.1-70b-versatile": {
-        "provider": "groq",
-        "context_window": 32768,
-        "speed": "medium",
-        "quality": "excellent",
-        "cost": "free"
-    },
     "llama-3.1-8b-instant": {
         "provider": "groq",
         "context_window": 8192,
@@ -115,27 +108,13 @@ MODEL_CONFIGS = {
         "quality": "good",
         "cost": "free"
     },
-    "mixtral-8x7b-32768": {
-        "provider": "groq",
-        "context_window": 32768,
-        "speed": "medium",
-        "quality": "excellent",
-        "cost": "free"
-    },
-    "gemma2-9b-it": {
-        "provider": "groq",
-        "context_window": 8192,
-        "speed": "fast",
-        "quality": "good",
-        "cost": "deprecated",
-        "note": "Deprecated - use llama-3.3-70b-versatile instead"
-    },
     "mixtral:8x7b": {
         "provider": "ollama",
         "context_window": 32768,
         "speed": "slow",
         "quality": "excellent",
-        "cost": "free_local"
+        "cost": "free_local",
+        "note": "Requires Ollama installed locally"
     }
 }
 
